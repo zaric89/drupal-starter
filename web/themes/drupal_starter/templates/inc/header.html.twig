@@ -1,0 +1,15 @@
+<header id="masthead" class="c-header js-header">
+  <div class="container c-header_-container">
+    <a class="c-branding" href="/" rel="home">
+		{# <img src="/{{ active_theme_path() ~ '/assets/images/logo.svg' }}" alt="logo-small"> #}
+		{% include "@drupal_starter/../assets/images/logo.svg" %}
+    </a><!-- .c-branding -->
+
+    <a href="javascript:;" class="c-menu-btn js-menu-btn"><span></span></a> <!-- menu-button -->
+
+    <div id="site-navigation" class="c-main-navigation js-main-nav">
+		{{ page.header }}
+    </div>
+  </div>
+</header><!-- #masthead -->
+<div class="site-content js-site-content" id="site-content">

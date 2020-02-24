@@ -1,0 +1,13 @@
+<div class="c-slider js-slider-banner">
+{% for slide in slides %}
+  <div class="c-slider__slide" style="background-image: url('{{ slide.image }}');">
+    <div class="c-slider__caption">
+        <h1 class="c-slider__caption-title">{{ slide.title }}</h1>
+        {% if slide.description %}
+            <div class="c-slider__caption-text">{{ slide.description | raw }}</div>
+        {% endif %}
+        {{ slide.link }}
+    </div>
+  </div><!-- .c-banner-example -->
+{% endfor %}
+</div>

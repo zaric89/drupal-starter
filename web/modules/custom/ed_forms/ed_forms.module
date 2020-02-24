@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ *
+ */
+function ed_forms_theme() {
+  $theme = [
+    'thank_you_page' => [
+      'template' => 'thank-you-page',
+      'variables' => [
+        'data' => NULL,
+      ],
+    ],
+  ];
+
+  return $theme;
+}

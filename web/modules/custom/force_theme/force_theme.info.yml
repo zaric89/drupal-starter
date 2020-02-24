@@ -1,0 +1,5 @@
+name: Force theme
+description: Theme negotiator for main theme.
+type: module
+core: 8.x
+package: Custom

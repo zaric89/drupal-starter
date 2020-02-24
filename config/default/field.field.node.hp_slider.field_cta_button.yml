@@ -1,0 +1,25 @@
+uuid: 718cfe82-e899-4455-ac9c-134a00524b26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta_button
+    - node.type.hp_slider
+  module:
+    - link
+_core:
+  default_config_hash: LtJZTrNaQi7oH6pAfK9PuJ2ZLQUvCEVXSJA31AGP728
+id: node.hp_slider.field_cta_button
+field_name: field_cta_button
+entity_type: node
+bundle: hp_slider
+label: 'CTA button'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

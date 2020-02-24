@@ -1,0 +1,88 @@
+/*--------------------------------------------------------------
+## Banners
+--------------------------------------------------------------*/
+.c-slider {
+	position: relative;
+
+	.slick-dots {
+		@include center(x, absolute);
+		bottom: 20px;
+		margin-top: 0;
+		z-index: 1;
+
+		button {
+			background-color: $white;
+
+			&::before {
+				border: 1px solid $white;
+			}
+		}
+	}
+}
+
+.c-slider__slide {
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+    position: relative;
+	max-height: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: block;
+		background-color: rgba($black, 0.5);
+		z-index: 0;
+	}
+
+	+ .c-slider__slide {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+
+	&.slick-slide {
+		position: relative;
+		z-index: 0;
+		top: initial;
+		left: initial;
+	}
+
+	@include mq($tablet) {
+		max-height: 450px;
+		background-attachment: initial;
+	}
+
+	@include mq($phone) {
+		max-height: 300px;
+	}
+}
+
+.c-slider__caption {
+	text-align: center;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 0 15px;
+	@include center;
+
+	h1,
+	p {
+		color: $white;
+	}
+}

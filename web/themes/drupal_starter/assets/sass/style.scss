@@ -1,0 +1,143 @@
+/* ==========================================================================
+   INUITCSS
+   ========================================================================== */
+
+/**
+ * inuitcss, by @csswizardry
+ *
+ * github.com/inuitcss | inuitcss.com
+ */
+
+/**
+ * This is an example inuitcss manifest file. DO NOT MODIFY THIS FILE DIRECTLY.
+ * Instead, copy and paste it into your own CSS directory and make additions,
+ * extensions, and modifications there.
+ */
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Config...............Project-level configuration and feature switches.
+ * Core.................inuitcss’ core and setup settings.
+ * Global...............Project-wide variables and settings.
+ * Font.................This contain variables that defined font families.
+ * Breakpoints..........This contain variables with breakpoints.
+ *
+ * TOOLS
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ * Sass MQ..............inuitcss’ default media query manager.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ * Normalize.css........A level playing field using @necolas’ Normalize.css.
+ * Reset................A tiny reset to complement Normalize.css.
+ * Shared...............Sensibly and tersely share some global commonalities
+ *                      (particularly useful when managing vertical rhythm).
+ * Fonts................Fonts used on project.
+ *
+ * ELEMENTS
+ * Page.................Set up our document’s default `font-size` and
+ *                      `line-height`.
+ * Headings.............Very minimal (i.e. only font-size information) for
+ *                      headings 1 through 6.
+ * Images...............Base image styles.
+ * Tables...............Simple table styles.
+ *
+ * OBJECTS
+ * Wrapper..............Page constraint object.
+ * Layout...............Generic layout module.
+ * Media................Image- and text-like content side by side. The
+ *                      poster-child of OOCSS.
+ * Flag.................Table-layout-based advancement on the Media object.
+ * List-bare............Lists with no bullets or indents.
+ * List-inline..........A list whose items all site in a line.
+ * Box..................Simple boxing abstraction.
+ * Block................Image-on-top-of-text object.
+ * Ratio................A container for maintaining aspect ratio of content.
+ * Crop.................Provide a cropping context for media (images, etc.).
+ * Table................Classes for manipulating `table`s.
+ * Pack.................Pack items into available horizontal space.
+ *
+ * COMPONENTS
+ * Buttons..............An example button component, and how it fits into the
+ *                      inuitcss framework.
+ *
+ * UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Widths...............Simple width helper classes.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacings.............Nudge bits of the DOM around with these spacing
+ *                      classes.
+ * Responsive-Spacings..Enhances the function of normal spacings for
+ *                      responsive usage.
+ * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ * Hide.................Helper classes to hide content
+ *
+ * BOOTSRTRAP
+ * Variables............You can define width of container and grid breakpoints
+ *
+ * LIBRARIES
+ * Descript.............This folder contain Plugins libreries
+ */
+
+// Tools
+ @import 'tools/tools.mixins';
+ @import 'tools/tools.animations';
+ @import 'tools/tools.iconfont';
+
+// SETTINGS
+@import 'settings/settings.global';
+@import 'settings/settings.colors';
+@import 'settings/settings.font';
+@import 'settings/settings.breakpoints';
+// @import 'settings/settings.admin';
+// @import 'settings/settings.user-login';
+// @import 'settings/settings.404';
+
+// BOOTSTRAP GRID (if you whant to use bootstrap grid uncomment line belowe)
+@import 'bootstrap/bootstrap-grid';
+
+// LIBRARIES (if you whant to use slick slider uncomment it)
+@import 'libraries/slick';
+@import 'libraries/select2.min';
+
+// GENERIC
+@import 'generic/generic.box-sizing';
+@import 'generic/generic.normalize';
+@import 'generic/generic.reset';
+@import 'generic/generic.fonts';
+
+// ELEMENTS
+@import 'elements/elements.buttons';
+@import 'elements/elements.headings';
+@import 'elements/elements.slider-elements';
+@import 'elements/elements.tables';
+@import 'elements/elements.tabs';
+@import 'elements/elements.typography';
+@import 'elements/elements.lists';
+@import 'elements/elements.forms';
+
+// SETTINGS ( this is placed here to avoid style changes on default pages )
+@import 'settings/settings.admin';
+@import 'settings/settings.user-login';
+@import 'settings/settings.404';
+
+// OBJECTS
+//
+// Uncomment and add to this section as necessary.
+@import 'objects/objects.flex';
+@import 'objects/objects.print';
+
+// COMPONENTS
+//
+// Build and include your project’s UI components here.
+@import 'components/components.header';
+@import 'components/site-navigation';
+@import 'components/components.banner';
+@import 'components/components.status-messages';
+@import 'components/components.ajax-progress';
+@import 'components/components.slider-example';
+@import 'components/components.footer';

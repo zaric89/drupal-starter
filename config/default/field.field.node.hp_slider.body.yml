@@ -1,0 +1,24 @@
+uuid: a27977e6-c9e9-4f86-800d-2b82c8a52a2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.hp_slider
+  module:
+    - text
+_core:
+  default_config_hash: oqAIprc4i9Uq-6EVvON59rna8nSGcm8PO1yzTI34mfM
+id: node.hp_slider.body
+field_name: body
+entity_type: node
+bundle: hp_slider
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #BASIC FONTS VARIABLES
+   ========================================================================== */
+
+// This settings contain basic font variables
+
+// Example
+$font-default-sans-serif: Arial, Helvetica, sans-serif;
+
+$font-main: 'Font Example', $font-default-sans-serif;
+$font-second: 'Font Example Second', $font-default-sans-serif;
+// or
+$font-roboto: 'Font Example Roboto', $font-default-sans-serif;

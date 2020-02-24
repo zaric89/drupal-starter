@@ -1,0 +1,26 @@
+name: Drupal Starter
+type: theme
+description: Starter theme for Drupal 8 projects
+core: 8.x
+
+libraries:
+ - drupal_starter/global-styling
+
+regions:
+  header: 'Header'
+  main_top: 'Main Top'
+  highlighted: 'Highlighted'
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  pre_footer: 'Pre Footer'
+  footer: 'Footer'
+
+#dependencies:
+# - mail_login
+# - devel
+# - module_filter
+# - admin_toolbar
+# - paragraphs
+# - menu_trail_by_path
+# - block_class

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - field.field.node.hp_slider.body
+        - node.type.hp_slider
+    module:
+        - text
+        - user
+id: node.hp_slider.default
+targetEntityType: node
+bundle: hp_slider
+mode: default
+content:
+    body:
+        label: hidden
+        type: text_default
+        weight: 101
+        settings: {  }
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

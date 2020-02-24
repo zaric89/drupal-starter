@@ -1,0 +1,8 @@
+name: EtonDigital mail
+description: Sending HTML templated mails functionality
+type: module
+core: 8.x
+package: Custom
+dependencies:
+  - mailsystem:mailsystem
+  - swiftmailer:swiftmailer

@@ -1,0 +1,5 @@
+name: Eton Digital slider
+description: Creates homepage slider
+type: module
+core: 8.x
+package: Custom

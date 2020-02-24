@@ -1,0 +1,26 @@
+uuid: 36b398ce-d6a6-41f1-9c8e-a083af57b8b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - ed_slider
+    - system
+  theme:
+    - drupal_starter
+id: mainsliderblock
+theme: drupal_starter
+region: main_top
+weight: -5
+provider: null
+plugin: main_slider_block
+settings:
+  id: main_slider_block
+  label: 'Main Slider Block'
+  provider: ed_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

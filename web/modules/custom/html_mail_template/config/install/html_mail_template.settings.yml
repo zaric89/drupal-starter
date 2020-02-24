@@ -1,0 +1,1 @@
+mail_ids: "user_register_no_approval_required,\r\nuser_register_admin_created,\r\nuser_register_pending_approval_admin,\r\nuser_register_pending_approval,\r\nuser_password_reset,\r\nuser_status_activated,\r\nuser_status_blocked,\r\nuser_cancel_confirm,\r\nuser_status_canceled,\r\nwebform_submission,\r\nswiftmailer_test"

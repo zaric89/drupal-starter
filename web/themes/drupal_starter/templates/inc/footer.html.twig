@@ -1,0 +1,23 @@
+</div> {# End of site-content #}
+
+<footer class="c-footer">
+    {% if page.pre_footer %}
+		<div class="c-footer__social">
+			<div class="container">
+				<div class="row">
+				<div class="col-sm-12">
+					{{ page.pre_footer }}
+				</div>
+				</div>
+			</div>
+		</div>
+    {% endif %}
+    <div class="container">
+	{% if page.footer %}
+		<div class="row">
+			{{ page.footer }}
+		</div>
+    {% endif %}
+	<div class="c-copyright">&copy; {{ "now"|date("Y") }}  {{ 'All rights EtonDigital Ltd.' | trans }}</div>
+    </div>
+</footer> <!-- .site-footer -->

@@ -1,0 +1,65 @@
+///* ========================================================================
+//   #SLIDER ELEMENTS
+//   ======================================================================== */
+
+.slick-slide {
+	&:focus {
+		outline: none;
+	}
+}
+
+
+.slick-dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 25px;
+
+	li {
+		font-size: 10px;
+		line-height: 1;
+		padding: 0 7px 7px;
+
+		&.slick-active {
+			button {
+				&::before {
+					opacity: 1;
+					visibility: visible;
+					width: 14px;
+					height: 14px;
+					transition: 0.2s ease-in-out;
+				}
+			}
+		}
+	}
+
+	button {
+		font-size: 0;
+		line-height: 0;
+		padding: 0;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		border: 0;
+		background-color: $black;
+		position: relative;
+
+		&::before {
+			content: '';
+			@include center;
+			width: 8px;
+			height: 8px;
+			border-right: 0;
+			border: 1px solid $black;
+			border-radius: 50%;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.05s ease-in-out;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}

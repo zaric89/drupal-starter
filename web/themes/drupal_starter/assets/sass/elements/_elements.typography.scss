@@ -1,0 +1,30 @@
+/* ==========================================================================
+   #TYPOGRAPHY
+   ========================================================================== */
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $black;
+	font-family: $font-main;
+	font-size: 16px;
+	line-height: 1.35;
+}
+
+p {
+	margin-bottom: 25px;
+}
+
+blockquote {
+	margin: 0 25px;
+}
+
+pre {
+	background: #bebebe;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}

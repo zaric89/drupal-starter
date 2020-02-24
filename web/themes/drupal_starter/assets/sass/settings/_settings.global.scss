@@ -1,0 +1,65 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+html, body {
+	// sass-lint:disable-all
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	// sass-lint:enable-all
+	height: 100%;
+
+	::selection {
+		color: #fff;
+		text-shadow: none;
+		background: #81c4ed;
+	}
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	&.menu-open {
+		overflow: hidden;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+// Transitions
+$dur: 350ms;
+$ease: ease;
+
+img {
+	max-width: 100%;
+}
+
+.layout-container {
+	position: relative;
+}
+
+.site-content {
+	min-height: 60vh;
+}
+
+// Icon font
+[class*='font-'] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #000;
+	font-size: 30px;
+	line-height: 1;
+}
+
+.hide {
+	display: none;
+}

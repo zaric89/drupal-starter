@@ -1,0 +1,99 @@
+/* ==========================================================================
+   #Status messages
+   ========================================================================== */
+
+  .messages-status {
+	
+  }
+  
+  [aria-label*='Status message'],
+  [aria-label*='Error message'],
+  [aria-label*='Warning message'] {
+    padding: 23px 80px 23px 30px;
+    cursor:  pointer;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+		z-index: 1;
+  
+    &::before {
+      content: '';
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      right: 32px;
+      top: calc((100% - 46px) / 2);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    ul {
+      width: calc(100% - 50px);
+  
+      li {
+        position: relative;
+        padding-left: 15px;
+      }
+  
+      a {
+        text-decoration: underline;
+      }
+    }
+    
+    em {
+      word-break: break-all;
+    }
+		
+		.page-user-login &,
+		.page-user-password & {
+			position: absolute;
+			left: 0;
+			top: 37px;
+		}
+  }
+  
+  [aria-label*='Status message'] {
+    background-color: #c7eddf;
+    border: 1px solid #c7eddf;
+    color: #4ab18c;
+    border-radius: 5px;
+   
+    &::before {
+      //background-image: url('../../assets/images/example-image.svg');
+      background-size: 100%;
+    }
+  
+    a {
+      text-decoration: underline;
+    }
+  }
+  
+  [aria-label*='Error message'] {
+    background-color: #ecbecd;
+    border: 1px solid #ecbecd;
+    color: #962445;
+    border-radius: 5px;
+      
+    &::before {
+      //background-image: url('../../assets/images/example-image.svg');
+    }
+  
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  [aria-label*='Warning message'] {
+    background-color: #fdebc2;
+    border: 1px solid #fdebc2;
+    color: #edb42f;
+    border-radius: 5px;
+      
+    &::before {
+      //background-image: url('../../assets/images/example-image.svg');
+    }
+  
+    a {
+      text-decoration: underline;
+    }
+  }

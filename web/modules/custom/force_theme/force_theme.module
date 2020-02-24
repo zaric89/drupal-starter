@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function force_theme_preprocess_page(&$vars)
+{
+    $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+    $session = \Drupal::service('user.private_tempstore')->get('force_theme');
+
+    $session->set('active_theme', $active_theme);
+}

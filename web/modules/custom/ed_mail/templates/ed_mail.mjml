@@ -1,0 +1,85 @@
+<mjml>
+  <mj-head>
+    <mj-title>ITF Global Email</mj-title>
+    <mj-font name="Source-sans" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900"></mj-font>
+    <mj-attributes>
+      <mj-all font-family="'Source Sans Pro', sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="18px" color="#434a54" line-height="28px"></mj-text>
+      <mj-section padding="0px"></mj-section>
+      <mj-class name="container" margin="0 auto" padding="0 3.5vw"></mj-class>
+      <mj-class name="wrap" padding="50px 0"></mj-class>
+      <mj-class name="btn" font-weight="900" line-height="20px" font-size="17px" text-transform="uppercase" background-color="#9ec171" color="white" align="left" padding="40px 0 20px"></mj-class>
+      <mj-class name="text-big" color="#fff" font-size="18px" line-height="1.2" text-transform="uppercase" font-weight="700" text-align="left" padding="2px 0" letter-spacing="0.3em"></mj-class>
+      <mj-class name="date" color="#676767" font-size="18px" font-weight="400" letter-spacing="0.1em" padding="10px 0 0"></mj-class>
+      <mj-class name="title" padding="10px 0 1vw 0"></mj-class>
+    </mj-attributes>
+
+     <mj-style>
+      @media all and (max-width: 480px) {
+        h2 {
+          font-size: 1.8em !important;
+        }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#FFF" width="770px">
+    <mj-wrapper>
+      <mj-hero mj-class="container">
+        <mj-image src="{{ data.site_url }}/modules/custom/ed_mail/images/itf-email-logo.png" alt="logo" align="left" border="none" padding="0" width="300px"></mj-image>
+      </mj-hero>
+    </mj-wrapper>
+    <mj-wrapper padding="18px 0" background-color="#0f6aaf">
+      <mj-section mj-class="container">
+        <mj-column>
+          <mj-text mj-class="text-big">SOLIDARITY</mj-text>
+        </mj-column>
+        <mj-column width="25%">
+          <mj-text mj-class="text-big">ACTION</mj-text>
+        </mj-column>
+        <mj-column width="41%">
+          <mj-text mj-class="text-big">STRENGTH</mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+    <mj-wrapper mj-class="wrap">
+      <mj-section mj-class="container">
+        <mj-column>
+          <mj-text mj-class="date">{{ 'now'|date('d M Y') }}</mj-text>
+          <mj-text mj-class="title"><h2 style="color: #000; font-size:2.2em; font-weight: 700; line-height: 1; letter-spacing: 0.03em; margin: 0 0 10px;">{{ data.subject }}</h2></mj-text>
+          <mj-text padding="0">
+            {{ data.body }}
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+    <mj-wrapper padding="45px 0" background-color="#e7e7e7">
+      <mj-section mj-class="container">
+        <mj-column width="20%" padding="0">
+          <mj-image src="{{ data.site_url }}/modules/custom/ed_mail/images/itf-email-logo-footer.png" alt="logo" align="left" border="none" width="104px" padding="5px 0 10px"></mj-image>
+        </mj-column>
+        <mj-column>
+          <mj-text font-size="16px" font-weight="700" color="#000" padding="0 0 5px">Contact us</mj-text>
+          <mj-text font-size="16px" font-weight="400" line-height="28px" color="#000" padding="0">
+             <a href="https://goo.gl/maps/ksZn3D4hj1v" style="color: #000; text-decoration: underline;" target="_blank">ITF House <br> 49-60 Borough Road <br> London, SE1 1DR<br></a>
+          </mj-text>
+        </mj-column>
+        <mj-column>
+          <mj-text font-size="16px" font-weight="400" line-height="28px" color="#000" padding="5px 0 0">
+            <br>
+            <a href="tel:+44 (0) 20 7403 2733" style="color: #000; text-decoration: none;">Tel: <span style="color: #000; text-decoration: underline;">+44 (0) 20 7403 2733</span></a> <br> Fax: +44 (0) 20 7357 7871<br>
+            <a href="mailto:mail@itf.org.uk" style="color: #000; text-decoration: none;">Email: <span style="color: #000; text-decoration: underline;" >mail@itf.org.uk</span></a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+    <mj-wrapper padding="0" background-color="#d9d9d9">
+      <mj-section>
+        <mj-group mj-class="container">
+          <mj-column padding="3px 0 0">
+            <mj-text align="center" font-size="16px" line-height="1.2" color="#000">&copy; {{ 'now'|date('Y') }} International Transport Workers’ Federation. All rights reserved</mj-text>
+          </mj-column>
+        </mj-group>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

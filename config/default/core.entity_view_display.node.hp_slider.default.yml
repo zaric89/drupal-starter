@@ -1,0 +1,32 @@
+uuid: 90de27ee-4dad-4c9e-955a-f647a1289a99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hp_slider.body
+    - field.field.node.hp_slider.field_cta_button
+    - field.field.node.hp_slider.field_image
+    - node.type.hp_slider
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: tiI9sptWipPl8VzPmF9Vo40v3h9RFkliP-gQWabVDRI
+id: node.hp_slider.default
+targetEntityType: node
+bundle: hp_slider
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_cta_button: true
+  field_image: true

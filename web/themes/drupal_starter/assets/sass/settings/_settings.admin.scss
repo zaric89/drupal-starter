@@ -1,0 +1,95 @@
+///* ========================================================================
+//   #ADMIN
+//   ======================================================================== */
+// Header fix when drupal nav bar is active
+.toolbar-fixed {
+	&.toolbar-tray-open {
+		@include mq(976, min) {
+			.c-header {
+				top: 79px;
+			}
+		}
+	}
+
+	.c-header {
+		top: 39px;
+	}
+
+	@include mq($tablet) {
+		.c-main-navigation nav >.menu {
+			padding-top: 150px;
+		}
+	}
+}
+
+.toolbar-vertical {
+	.c-header {
+		top: 39px;
+
+		&.sticky-header {
+			top: 0;
+		}
+	}
+
+	@include mq($tablet) {
+		.c-main-navigation nav >.menu {
+			padding-top: 100px;
+		}
+	}
+}
+
+// Contextual menu customization
+.contextual-region .contextual {
+	.contextual-links {
+		background-color: #000;
+
+		li {
+			float: none;
+
+			a {
+				color: $white;
+				text-align: center;
+				background-color: #000;
+				border: 1px solid #000;
+				position: relative;
+				overflow: hidden;
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: 0;
+					transform: translateY(-50%);
+					background-color: $white;
+					width: 0;
+					height: 2px;
+					transition: 0.15s ease-in-out;
+				}
+
+				&:hover {
+					background-color: #000;
+
+					&::after {
+						left: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	&.open {
+		.trigger {
+			background-color: #000;
+		}
+	}
+}
+
+.no-touchevents
+.contextual-region
+.contextual
+.contextual-links
+li a:hover {
+	color: $white;
+	background-color: #000;
+}

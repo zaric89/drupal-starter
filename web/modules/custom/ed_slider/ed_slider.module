@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ *
+ */
+function ed_slider_theme() {
+  $theme = [
+    'hp_slider' => [
+      'template' => 'hp-slider',
+      'variables' => [
+        'slides' => NULL,
+      ],
+    ],
+  ];
+
+  return $theme;
+}

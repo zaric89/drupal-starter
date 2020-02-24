@@ -1,0 +1,61 @@
+/* ==========================================================================
+   #FLEX BASED CLASSES
+   ========================================================================== */
+
+.o-flex,
+%o-flex {
+	display: flex;
+}
+
+.o-inline-flex,
+%o-inline-flex {
+	display: inline-flex;
+}
+
+/**
+ * Flex justifize
+*/
+.o-flex--justifize,
+%o-flex--justifize {
+	justify-content: space-between;
+}
+
+/**
+ * Flex justifize - around
+*/
+.o-flex--around,
+%o-flex--around {
+	justify-content: space-around;
+}
+
+/**
+ * Flex horizontal center
+*/
+.o-flex--center,
+%o-flex--center {
+	justify-content: center;
+}
+
+/**
+ * Flex vertical align middle
+*/
+.o-flex--middle,
+%o-flex--middle {
+	align-items: center;
+}
+
+/**
+ * Flex vertical align top
+*/
+.o-flex--top,
+%o-flex--top {
+	align-items: flex-start;
+}
+
+/**
+ * Flex vertical align bottom
+*/
+.o-flex--bottom,
+%o-flex--bottom {
+	align-items: flex-end;
+}

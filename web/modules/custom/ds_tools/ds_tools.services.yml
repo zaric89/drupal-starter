@@ -1,0 +1,5 @@
+services:
+  ds_tools.event_subscriber:
+    class: Drupal\ds_tools\EventSubscriber\RedirectSubscriber
+    tags:
+      - { name: event_subscriber }

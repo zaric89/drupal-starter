@@ -1,0 +1,34 @@
+uuid: 68eb4785-afe9-4281-a1ee-5d7d91d695da
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hp_slider.body
+    - field.field.node.hp_slider.field_cta_button
+    - field.field.node.hp_slider.field_image
+    - node.type.hp_slider
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: xK_dnR1D2ZmHdY_W3v_QXk__wG-VvEzGLx-lm223AWA
+id: node.hp_slider.teaser
+targetEntityType: node
+bundle: hp_slider
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_cta_button: true
+  field_image: true

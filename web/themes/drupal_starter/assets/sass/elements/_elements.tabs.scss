@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #TABS
+   ========================================================================== */
+#block-drupal-starter-local-tasks {
+
+  ul {
+
+    li {
+      display: inline-block;
+      margin: 10px auto;
+    }
+
+    a {
+      padding: 5px 10px;
+      border: 1px solid $black;
+    }
+
+    a:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+}

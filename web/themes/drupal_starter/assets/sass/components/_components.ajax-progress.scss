@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+## Ajax progress
+--------------------------------------------------------------*/
+.ajax-progress {
+
+  &.ajax-progress-throbber {
+    
+    .throbber {
+      background-image:  url('../../assets/images/loading.svg');
+      width: 25px;
+      height: 25px;
+      display: block;
+      padding: 0;
+      border-radius: 50%;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      animation-name: spin;
+      animation-duration: 1500ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear; 
+    
+      @keyframes spin {
+          from {
+              transform: rotate(0deg);
+          }
+          to {
+              transform: rotate(360deg);
+          }
+      }
+    }
+    
+    .message {
+      display: none;
+    }
+  }
+}
+
+.ajax-progress-fullscreen {
+  left: 49.1%;
+  position: fixed;
+  top: 46%;
+  z-index: 1000;
+  background-image:  url('../../assets/images/loading.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  opacity: 0.9;
+  padding: 4px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 1500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+    
+  @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+}

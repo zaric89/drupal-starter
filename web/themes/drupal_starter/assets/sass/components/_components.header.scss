@@ -1,0 +1,221 @@
+.c-header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 25px 0;
+	z-index: 2;
+	background-color: $mine-shaft;
+	transition: 0.2s ease-in-out;
+
+	@include mq($tablet) {
+		padding: 10px 0;
+
+		.container {
+			max-width: 100%;
+		}
+	}
+}
+
+.c-header_-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.c-branding {
+	svg {
+		display: block;
+		width: auto;
+		height: 64px;
+		transition: 0.2s ease-in-out;
+	}
+
+	.site-logo-bottom,
+	.site-logo-text {
+		transition: fill 0.2s ease-in-out;
+	}
+
+	@include mq($tablet) {
+		svg {
+			height: 38px;
+		}
+	}
+}
+
+
+/* Sticky Header */
+.sticky-header {
+	background-color: $white;
+	padding: 10px 0;
+	box-shadow: 1px 1px 17px rgba(0, 0, 0, 0.2);
+
+	.c-branding {
+		svg {
+			height: 50px;
+		}
+	}
+
+	.site-logo-bottom,
+	.site-logo-text {
+		fill: $mine-shaft;
+	}
+
+	@include mq($tablet, min) {
+		.c-main-navigation nav {
+			a {
+				color: $mine-shaft;
+			}
+
+			> .menu {
+
+				li:hover > .menu,
+				li.focus > .menu {
+					transform: translateY(19px);
+
+					&::before {
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 20px;
+						top: -20px;
+						left: 0;
+					}
+
+					.menu {
+						transform: translateY(0);
+					}
+				}
+
+			}
+		}
+	}
+
+	@include mq($tablet) {
+		.c-branding {
+			svg {
+				height: 38px;
+			}
+		}
+	}
+
+	.c-menu-btn {
+		&::after,
+		&::before,
+		span {
+			background-color: $mine-shaft;
+		}
+
+
+		span {
+			&::before {
+				background-color: $mine-shaft;
+			}
+		}
+	}
+}
+
+.site-content {
+	padding-top: 114px;
+	transition: 0.2s ease-in-out;
+
+	&.sticky-content {
+		@include mq($tablet, min) {
+			padding-top: 70px;
+		}
+	}
+
+	@include mq($tablet) {
+		padding-top: 58px;
+	}
+}
+
+/*--------------------------------------------------------------
+## Menu Btn
+--------------------------------------------------------------*/
+.c-menu-btn {
+	display: none;
+	width: 30px;
+	height: 19px;
+	right: 15px;
+	top: 21px;
+	position: absolute;
+	z-index: 110;
+
+	&::after,
+	&::before,
+	span {
+		width: 100%;
+		height: 3px;
+		position: absolute;
+		display: block;
+		background-color: $white;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		transition: $dur width $dur $ease;
+	}
+
+	&::after {
+		top: 0;
+		left: 0;
+	}
+
+	&::before {
+		bottom: 0;
+		right: 0;
+	}
+
+	span {
+		top: 50%;
+		margin-top: -1.5px;
+		transition: transform $dur $ease;
+
+		&::before {
+			content: '';
+			background-color: $white;
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			left: 0;
+			transition: transform $dur $ease;
+			z-index: 2;
+		}
+	}
+
+	&.open {
+		&::after,
+		&::before {
+			transition: $dur $ease;
+			width: 0;
+			background-color: $white;
+		}
+
+		&::after {
+			left: 0;
+		}
+
+		&::before {
+			right: 0;
+		}
+
+		span {
+			transform: rotate(45deg);
+			transition: $dur transform $dur $ease;
+			background-color: $white;
+
+			&::before {
+				transform: rotate(-90deg);
+				transition: $dur transform $dur $ease;
+				background-color: $white;
+			}
+		}
+	}
+
+	@include mq($tablet) {
+		display: block;
+	}
+}
+

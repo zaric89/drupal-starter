@@ -1,0 +1,14 @@
+ds_tools.page_not_found:
+  path: 'page-404'
+  defaults:
+    _controller: '\Drupal\ds_tools\Controller\ErrorPages:pageNotFound'
+    _title: '404 page'
+  requirements:
+    _permission: 'access content'
+ds_tools.page_access_denied:
+  path: 'page-403'
+  defaults:
+    _controller: '\Drupal\ds_tools\Controller\ErrorPages:pageAccessDenied'
+    _title: '403 page'
+  requirements:
+    _permission: 'access content'

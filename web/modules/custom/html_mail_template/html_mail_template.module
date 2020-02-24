@@ -1,0 +1,167 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Render\Markup;
+use Drupal\file\FileInterface;
+
+/**
+ * @param $params
+ */
+function html_mail_template_send($params) {
+
+  // Reroute emails.
+  $moduleHandler = Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('reroute_email')) {
+    $config = Drupal::config('reroute_email.settings')->getRawData();
+    if ($config['enable']) {
+      if ($params['body'] instanceof Markup) {
+        $params['body'] = $params['body']->__toString();
+      } elseif (isset($params['body']['#theme'])) {
+        $params['body'] = render($params['body'])->__toString();
+      }
+      reroute_email_mail_alter($params);
+      // Return back Markup object so that HTML is rendered.
+      $params['body'] = Markup::create($params['body']);
+    }
+  }
+
+  $mailer = new Swift_Mailer(new Swift_MailTransport());
+  $swiftMailerConfig = Drupal::config('swiftmailer.transport');
+  if ('smtp' === $swiftMailerConfig->get('transport')) {
+    $smtpTransport = new Swift_SmtpTransport($swiftMailerConfig->get('smtp_host'), $swiftMailerConfig->get('smtp_port'));
+
+    $mailer = new Swift_Mailer($smtpTransport);
+  }
+
+  $from = Drupal::config('system.site')->get('mail');
+  $from_name = Drupal::config('system.site')->get('name');
+
+  $html = [
+    '#theme' => 'html_mail_template',
+    '#data' => $params,
+  ];
+
+  try {
+    $message = Swift_Message::newInstance();
+    $message->setSubject($params['subject']);
+    $message->setTo($params['to']);
+    $message->setFrom([$from => $from_name]);
+    $message->setBody(Drupal::service('renderer')->renderRoot($html), 'text/html');
+
+    // Attach file if there is attachment
+    if (isset($params['attachment']) && $params['attachment'] instanceof FileInterface) {
+      $file_uri = $params['attachment']->getFileUri();
+      $file_name = $params['attachment']->getFilename();
+
+      $message->attach(Swift_Attachment::fromPath($file_uri)->setFilename($file_name));
+    }
+
+    $mailer->send($message);
+
+  } catch (Exception $e) {
+    $context = [
+      '@msg_id' => $params['id'],
+      '@code' => $e->getCode(),
+      '@msg' => $e->getMessage(),
+      '@file' => $e->getFile(),
+      '@line' => $e->getLine(),
+    ];
+    Drupal::logger('mail')
+      ->error("Can not send message ID: @msg_id. Error code: @code. Message: @msg. At line @line in file @file.", $context);
+  }
+
+  if (!$message) {
+    Drupal::messenger()->addError(t('Sending email failed. Please try again.'), false);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function html_mail_template_theme() {
+  $theme = [];
+
+  $theme['html_mail_template'] = [
+    'variables' => [
+      'data' => NULL,
+    ],
+    'template' => 'html-mail',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_mail_alter().
+ *
+ * @param $message
+ *   Message object.
+ */
+function html_mail_template_mail_alter(&$message) {
+  $keys = html_mail_template_get_mail_ids_for_users();
+wd_print('keys_debug', $keys);
+wd_print('message_debug', $message['id']);
+  if (isset($keys[$message['id']])) {
+    wd_print('test', 'radi');
+    $body_text = '';
+    foreach ($message['body'] as $item) {
+      $body_text .= $item;
+    }
+
+    $data = [
+      'subject' => $message['subject'],
+      'body' => check_markup(html_mail_template_get_message_body_as_text($message), 'basic_html'),
+      'site_url' => 'http://' . Drupal::request()->getHost(),
+    ];
+
+    $body = [
+      '#theme' => 'html_mail_template',
+      '#data' => $data,
+    ];
+
+    unset($message['body']);
+    $message['headers']['Content-Type'] = 'text/html; charset=utf-8';
+    $message['body'][1] = Drupal::service('renderer')->renderRoot($body);
+  }
+}
+
+/**
+ *  Get list of the mails that will be in the HTML template.
+ */
+function html_mail_template_get_mail_ids_for_users() {
+  $config = Drupal::config('html_mail_template.settings');
+  $ids = explode(",\r\n", $config->get('mail_ids'));
+
+  $keys = [];
+  foreach ($ids as $id) {
+    $keys[$id] = $id;
+  }
+
+  return $keys;
+}
+
+/**
+ * Format message body.
+ *
+ * @param array $message
+ * @return string
+ */
+function html_mail_template_get_message_body_as_text(array &$message) {
+  $body_text = '';
+  if (is_array($message['body'])) {
+    $body_text = implode('<br>', $message['body']);
+  } elseif (is_string($message['body'])) {
+    $body_text = nl2br($message['body']);
+  }
+
+  if ($message['id'] === 'contact_page_mail') {
+    $message['body'][1] = substr($message['body'][1], 7);
+    $message['body'][1] = '<h3> Message: </h3>' . $message['body'][1];
+    $body_text = implode('<br>', $message['body']);
+  }
+
+  return $body_text;
+}

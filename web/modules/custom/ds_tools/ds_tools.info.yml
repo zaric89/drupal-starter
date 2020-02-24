@@ -1,0 +1,5 @@
+name: Drupal Starter Tools
+description: General things build for Drupal Starter
+type: module
+core: 8.x
+package: Custom
