@@ -7,7 +7,7 @@
 1. Clone this repo into your Projects directory
 
     ```
-    git clone git@git.etondigital.com:drupal/drupal-starter.git drupal-starter
+    git clone git@github.com:zaric89/drupal-starter.git drupal-starter
     cd drupal-starter
     ```
 

@@ -1,5 +1,0 @@
-js_validator:
-  js:
-    //cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js: {}
-  dependencies:
-    - core/jquery

@@ -42,6 +42,7 @@ fin init-site
 
 # Install node_modules inside theme dir
 cd $THEME_PATH
+fin exec npm i npm@latest -g
 fin exec npm ci
 
 echo -en "${green_bg} DONE! ${NC} "
