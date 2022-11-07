@@ -10,7 +10,7 @@
     "babel-loader": "^6.0.0",
     "babel-preset-env": "^1.6.1",
     "browserify": "^16.2.3",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
